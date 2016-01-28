@@ -1,0 +1,35 @@
+{
+  "name": "fiCore",
+  "authors": [
+    "fiWhy <fiwhy@mail.ru>"
+  ],
+  "description": "fiCore json lib",
+  "main": "app.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "admin",
+    "skeleton",
+    "angularjs"
+  ],
+  "license": "MIT",
+  "homepage": "http://vk.com/fiwhy",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#~1.4.9",
+    "bootstrap": "~3.3.6",
+    "font-awesome": "~4.5.0",
+    "angular-ui-router": "~0.2.17",
+    "oclazyload": "~1.0.9",
+    "requirejs": "~2.1.22",
+    "angular-loading-bar": "~0.8.0",
+    "angular-animate": "~1.4.9"
+  }
+}

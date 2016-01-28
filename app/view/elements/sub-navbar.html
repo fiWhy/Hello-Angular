@@ -1,0 +1,34 @@
+<div class="subnavbar-inner">
+    <div class="container">
+      <ul class="mainnav">
+        <li ui-sref-active="active" data-ng-repeat="menuItem in vm.menu" menu-helper>
+          <div class="menu-block" data-ng-if="!menuItem.nextLevel" data-ng-include="'link'"></div>
+          <div data-ng-class="{'dropdown':menuItem.nextLevel}" class="menu-block" data-ng-if="menuItem.nextLevel" data-ng-include="'link-list'"></div>
+        </li>
+      </ul>
+    </div>
+    <!-- /container -->
+  </div>
+
+
+
+<script type="text/ng-template" id="link">
+  <a ui-sref-active="active" data-ui-sref="{{ menuItem.state }}" href="{{ menuItem.link }}">
+    <i data-ng-class="{'{{ menuItem.icon }}': menuItem.icon}"></i>
+    <span>{{ menuItem.title }}</span>
+  </a>
+</script>
+
+<script type="text/ng-template" id="link-list">
+  <a ui-sref-active="active" class="dropdown-toggle" data-toggle="dropdown" href="javascript:">
+    <i data-ng-class="{'{{ menuItem.icon }}': menuItem.icon}"></i>
+    <span>{{ menuItem.title }}</span>
+    <b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu">
+    <li data-ng-repeat="menuItem in menuItem.nextLevel">
+          <div class="menu-block" data-ng-if="!menuItem.nextLevel" data-ng-include="'link'"></div>
+          <div class="menu-block" data-ng-class="{'dropdown':menuItem.nextLevel}" data-ng-if="menuItem.nextLevel" data-ng-include="'link-list'"></div>
+    </li>
+  </ul>
+</script>

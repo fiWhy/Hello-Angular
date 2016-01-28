@@ -1,0 +1,23 @@
+<!--    <div data-ng-if="vm.isLoggedIn;" class="navbar navbar-fixed-top" ng-include="'/admin-application/app/view/elements/navbar.html'"></div>-->
+<div data-ng-if="vm.isLoggedIn;" class="subnavbar"  ng-include="'app/view/elements/sub-navbar.html'"></div>
+
+<div class="main">
+  <div class="main-inner">
+    <div class="container" ui-view="content"></div>
+  </div>
+</div>
+
+
+<div class="footer">
+  <div class="footer-inner">
+    <div class="container">
+      <div class="row">
+        <div class="span12"> &copy; 2013 <a href="http://www.egrappler.com/">Bootstrap Responsive Admin Template</a>. </div>
+        <!-- /span12 --> 
+      </div>
+      <!-- /row --> 
+    </div>
+    <!-- /container --> 
+  </div>
+  <!-- /footer-inner --> 
+</div>
