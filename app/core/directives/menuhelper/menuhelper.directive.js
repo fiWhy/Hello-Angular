@@ -1,7 +1,7 @@
 (function(){
     'use strict';
     
-    angular.module('admin.core')
+    angular.module('admin.core.directives')
         .directive('menuHelper', menuHelper);
     
     menuHelper.$inject = ['$rootScope', '$state', '$timeout'];

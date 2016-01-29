@@ -3,8 +3,8 @@
     angular.module('admin')
             .controller('AdminController', AdminController);
     
-    AdminController.$inject = ['$state', 'AdminService', 'MenuService'];
-    function AdminController($state, AdminService, MenuService) {
+    AdminController.$inject = ['$state', 'AuthorizeService', 'MenuService'];
+    function AdminController($state, AuthorizeService, MenuService) {
         var vm = this;
         vm.isLoggedIn = false;
         
@@ -22,7 +22,7 @@
         }
         
         function isLoggedIn() {
-            return AdminService.isLoggedIn();
+            return AuthorizeService.isLoggedIn();
         }
     }
 })()

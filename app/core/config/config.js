@@ -1,26 +1,28 @@
 (function(){
     'use strict';
     angular.module('admin.core')
-        .constant('config', configConst)
+        .constant('config', configConst())
             .config(config)
             .run(bootstrap);
+
 
     function config() {
         
     }
 
     function configConst() {
-        return {
-            apiUrl: '/api/',
-            mainPaths: {
-                menu: this.apiUrl + 'menu.html'
+        var apiUrl = '/api';
+            return  {
+                apiUrl: apiUrl,
+                mainPaths: {
+                    menu: apiUrl + 'menu.json',
+                    uthorize: apiUrl + 'authorize/:action.json'
+                }
             }
-        }
     }
 
     function bootstrap($ocLazyLoad) {
-        return $ocLazyLoad.load('Menu');
-        return $ocLazyLoad.load('Admin');
+        return $ocLazyLoad.load(['Admin', 'AuthorizeService', 'MenuService', 'MenuHelperDirective']);
     }
     
 })()

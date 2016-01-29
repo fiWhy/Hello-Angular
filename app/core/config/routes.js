@@ -22,7 +22,7 @@
             })
         
             .state('admin.dashboard', {
-                url: "/dashboard",
+                url: "dashboard",
                 views: {
                    content: {
                        controller: 'DashboardController as vm',
@@ -33,7 +33,7 @@
             })
         
             .state('admin.login', {
-                url: "/login",
+                url: "login",
                 controller: 'LoginController as vm',
                 views: {
                    content: {
