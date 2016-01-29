@@ -3,14 +3,15 @@
     
     angular.module('app.core')
             .service('AppService', AppService);
-    
-    function AppService() {
+
+    AppService.$inject = ['$translate'];
+    function AppService($translate) {
         return {
-            isLoggedIn: isLoggedIn
+            initLanguage: initLanguage
         }
         
-            function isLoggedIn() {
-                return true;
+            function initLanguage(lang) {
+                $translate.use(lang);
             }
     }
 })()

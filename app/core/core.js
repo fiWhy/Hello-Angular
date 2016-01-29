@@ -9,7 +9,9 @@
 
         'ngAnimate',
         'ngResource',
+        'pascalprecht.translate',
         'angular-loading-bar',
-        'ui.router',
+        'ui.router'
     ]);
-})()
+
+})();

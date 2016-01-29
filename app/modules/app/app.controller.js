@@ -3,8 +3,8 @@
     angular.module('app')
             .controller('AppController', AppController);
 
-    AppController.$inject = ['$state', 'AuthorizeService', 'MenuService'];
-    function AppController($state, AuthorizeService, MenuService) {
+    AppController.$inject = ['$state', 'AppService', 'AuthorizeService', 'MenuService', '$translate', 'config'];
+    function AppController($state, AppService, AuthorizeService, MenuService, $translate, config) {
         var vm = this;
         vm.isLoggedIn = false;
         
@@ -12,6 +12,7 @@
         
         function activate(){
             console.log('app');
+            AppService.initLanguage(config.language);
             vm.isLoggedIn = isLoggedIn();
 
             if(vm.isLoggedIn){
