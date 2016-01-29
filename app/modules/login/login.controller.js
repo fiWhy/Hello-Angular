@@ -5,8 +5,8 @@
             .controller('LoginController', LoginController);
 
 
-    LoginController.$inject = ['config', 'AuthorizeService'];
-    function LoginController(config, AuthorizeService) {
+    LoginController.$inject = ['config', 'AuthorizeService', '$translate'];
+    function LoginController(config, AuthorizeService, $translate) {
         var vm = this;
 
         vm.login = login;

@@ -12,7 +12,6 @@
         
         function activate(){
             console.log('app');
-            AppService.initLanguage(config.language);
             vm.isLoggedIn = isLoggedIn();
 
             if(vm.isLoggedIn){

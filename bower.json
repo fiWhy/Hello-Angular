@@ -34,10 +34,7 @@
     "angular-animate": "~1.4.9",
     "angular-resource": "~1.4.9",
     "angular-translate": "~2.9.0",
-    "angular-translate-loader-url": "~2.9.0",
     "angular-translate-loader-static-files": "~2.9.0",
-    "angular-translate-storage-local": "~2.9.0",
     "angular-cookies": "~1.4.9",
-    "angular-translate-loader-partial": "~2.9.0"
   }
 }

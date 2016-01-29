@@ -26,11 +26,18 @@
         });
 
         $translateProvider
-            .useSanitizeValueStrategy(null);
+            .useSanitizeValueStrategy(null)
+            .forceAsyncReload(true);
 
     }
 
-    function bootstrap($ocLazyLoad) {
+    bootstrap.$inject = ['$ocLazyLoad', '$rootScope', 'config', '$translate'];
+    function bootstrap($ocLazyLoad, $rootScope, config, $translate) {
+        
+         $rootScope.$on('$stateChangeSuccess', function(){
+            $translate.use(config.language);
+         })
+         
         return $ocLazyLoad.load(['App', 'AuthorizeService', 'MenuService', 'MenuHelperDirective', 'AlertService']);
     }
     

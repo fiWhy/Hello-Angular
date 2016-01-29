@@ -5,8 +5,8 @@
 
     function loadModules(modules) {
         return {
-            loadModules: ['$ocLazyLoad', function($ocLazyLoad){
-                return $ocLazyLoad.load(modules);
+            loadModules: ['$ocLazyLoad', '$timeout', function($ocLazyLoad, $timeout){
+                    return $ocLazyLoad.load(modules);
             }]
         }
     }
