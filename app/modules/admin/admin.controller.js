@@ -3,7 +3,7 @@
     angular.module('admin')
             .controller('AdminController', AdminController);
     
-    AdminController.$injector = ['$state', 'AdminService', 'MenuService'];
+    AdminController.$inject = ['$state', 'AdminService', 'MenuService'];
     function AdminController($state, AdminService, MenuService) {
         var vm = this;
         vm.isLoggedIn = false;
@@ -15,7 +15,7 @@
             vm.isLoggedIn = isLoggedIn();
 
             if(vm.isLoggedIn){
-                vm.menu = MenuService.getMenu();
+                vm.menu = MenuService.getMainMenu();
             }else{
                 $state.go('admin.login');
             }

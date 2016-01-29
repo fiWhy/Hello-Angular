@@ -4,7 +4,7 @@
     angular.module('admin.core')
         .directive('menuHelper', menuHelper);
     
-    menuHelper.$inejector = ['$rootScope', '$state', '$timeout'];
+    menuHelper.$inject = ['$rootScope', '$state', '$timeout'];
     function menuHelper($rootScope, $state, $timeout) {
         
         function makeActive(el){

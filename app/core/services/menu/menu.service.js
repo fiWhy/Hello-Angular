@@ -3,12 +3,13 @@
 
     angular.module('admin.core')
             .service('MenuService', MenuService);
+
     function MenuService(){
         return {
-            getMenu: getMenu
+            getMainMenu: getMainMenu
         }
 
-        function getMenu() {
+        function getMainMenu() {
             return [
                 {
                     title: 'Dashboard',

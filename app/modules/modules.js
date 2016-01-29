@@ -4,7 +4,7 @@
     angular.module('admin.modules', [])
             .config(Modules);
     
-    Modules.$injector = ['$ocLazyLoadProvider'];
+    Modules.$inject = ['$ocLazyLoadProvider'];
     function Modules($ocLazyLoadProvider) {
         $ocLazyLoadProvider.config({
             modules : [
@@ -14,8 +14,6 @@
                     files: [
                         'app/modules/admin/admin.controller.js',
                         'app/core/services/admin/admin.service.js',
-                        'app/core/services/menu/menu.service.js',
-                        'app/core/directives/menuhelper.directive.js'
                         ]
                 },
                 
