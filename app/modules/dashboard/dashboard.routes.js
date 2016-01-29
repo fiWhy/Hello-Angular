@@ -1,7 +1,7 @@
 (function(){
     'use strict';
     
-    angular.module('admin.modules.dashboard')
+    angular.module('app.modules.dashboard')
             .config(router);
     
     function router($stateProvider) {

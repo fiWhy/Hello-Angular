@@ -1,6 +1,6 @@
 (function(){
     'use strict';
-    angular.module('admin.core')
+    angular.module('app.core')
         .config(router);
 
     function loadModules(modules) {
@@ -16,9 +16,9 @@
         $stateProvider
             .state('admin', {
                 url: "/",
-                controller: 'AdminController as vm',
+                controller: 'AppController as vm',
                 templateUrl: 'app/view/layout/index.html',
-                resolve: loadModules('Admin')
+                resolve: loadModules('App')
             })
         
             .state('admin.dashboard', {

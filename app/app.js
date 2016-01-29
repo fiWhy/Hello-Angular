@@ -1,11 +1,11 @@
 (function(){
     'use strict';
     
-    angular.module('admin', [
+    angular.module('app', [
         /* System */
         'ngAnimate',
         
-        'admin.core',
-        'admin.modules',
+        'app.core',
+        'app.modules',
     ])
 })()

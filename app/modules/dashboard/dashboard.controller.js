@@ -1,7 +1,7 @@
 (function(){
     'use strict';
     
-    angular.module('admin.modules.dashboard')
+    angular.module('app.modules.dashboard')
             .controller('DashboardController', DashboardController);
     
     function DashboardController() {

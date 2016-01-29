@@ -1,7 +1,7 @@
 (function(){
     'use strict';
     
-    angular.module('admin.modules', [])
+    angular.module('app.modules', [])
             .config(Modules);
     
     Modules.$inject = ['$ocLazyLoadProvider'];
@@ -10,10 +10,10 @@
             modules : [
                 /* Admin */
                 {
-                    name: 'Admin',
+                    name: 'App',
                     files: [
-                        'app/modules/admin/admin.controller.js',
-                        'app/core/services/admin/admin.service.js',
+                        'app/modules/app/app.controller.js',
+                        'app/core/services/app/app.service.js',
                         ]
                 },
                 

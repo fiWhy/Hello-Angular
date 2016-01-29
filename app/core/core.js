@@ -1,11 +1,11 @@
 (function(){
     'use strict';
     
-    angular.module('admin.core', [
+    angular.module('app.core', [
         'oc.lazyLoad',
 
-        'admin.core.services',
-        'admin.core.directives',
+        'app.core.services',
+        'app.core.directives',
 
         'ngAnimate',
         'ngResource',

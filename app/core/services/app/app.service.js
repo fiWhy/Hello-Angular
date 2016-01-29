@@ -1,10 +1,10 @@
 (function(){
     'use strict';
     
-    angular.module('admin.core')
-            .service('AdminService', AdminService);
+    angular.module('app.core')
+            .service('AppService', AppService);
     
-    function AdminService() {
+    function AppService() {
         return {
             isLoggedIn: isLoggedIn
         }

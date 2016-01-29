@@ -1,7 +1,7 @@
 (function(){
     'use strict'
 
-    angular.module('admin.core.directives', [])
+    angular.module('app.core.directives', [])
         .config(Directives)
 
     Directives.$inject = ['$ocLazyLoadProvider'];

@@ -1,5 +1,5 @@
 (function(){
-    angular.module('admin.core.services', [])
+    angular.module('app.core.services', [])
         .config(Services)
 
     Services.$inject = ['$ocLazyLoadProvider'];

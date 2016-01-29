@@ -1,7 +1,7 @@
 (function(){
     'use strict';
 
-    angular.module('admin.core')
+    angular.module('app.core.services')
         .service('AuthorizeService', AuthorizeService);
 
     AuthorizeService.$inject = ['AuthorizeResource'];

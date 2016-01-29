@@ -1,17 +1,17 @@
 (function(){
     'use strict';
-    angular.module('admin')
-            .controller('AdminController', AdminController);
-    
-    AdminController.$inject = ['$state', 'AuthorizeService', 'MenuService'];
-    function AdminController($state, AuthorizeService, MenuService) {
+    angular.module('app')
+            .controller('AppController', AppController);
+
+    AppController.$inject = ['$state', 'AuthorizeService', 'MenuService'];
+    function AppController($state, AuthorizeService, MenuService) {
         var vm = this;
         vm.isLoggedIn = false;
         
         activate();
         
         function activate(){
-            console.log('admin');
+            console.log('app');
             vm.isLoggedIn = isLoggedIn();
 
             if(vm.isLoggedIn){

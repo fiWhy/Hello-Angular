@@ -1,6 +1,6 @@
 (function(){
     'use strict';
-    angular.module('admin.core')
+    angular.module('app.core')
         .constant('config', configConst())
             .config(config)
             .run(bootstrap);
@@ -22,7 +22,7 @@
     }
 
     function bootstrap($ocLazyLoad) {
-        return $ocLazyLoad.load(['Admin', 'AuthorizeService', 'MenuService', 'MenuHelperDirective']);
+        return $ocLazyLoad.load(['App', 'AuthorizeService', 'MenuService', 'MenuHelperDirective']);
     }
     
 })()
