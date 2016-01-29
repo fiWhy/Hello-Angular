@@ -7,12 +7,19 @@
     AuthorizeService.$inject = ['AuthorizeResource'];
     function AuthorizeService(AuthorizeResource) {
         return {
-            isLoggedIn: isLoggedIn
+            isLoggedIn: isLoggedIn,
+            login: login
         }
 
-        function isLoggedIn(){
+        function isLoggedIn() {
             return true;
             //return AuthorizeResource.isLoggedIn();
+        }
+
+        function login(data) {
+            console.log(data);
+            return true;
+            //return AuthorizeResource.login();
         }
     }
 })()

@@ -5,20 +5,19 @@
             .config(config)
             .run(bootstrap);
 
+    function configConst() {
+        var apiUrl = '/api';
+        return  {
+            apiUrl: apiUrl,
+            mainPaths: {
+                menu: apiUrl + 'menu',
+                authorize: apiUrl + 'authorize/:action'
+            }
+        }
+    }
 
     function config() {
         
-    }
-
-    function configConst() {
-        var apiUrl = '/api';
-            return  {
-                apiUrl: apiUrl,
-                mainPaths: {
-                    menu: apiUrl + 'menu.json',
-                    uthorize: apiUrl + 'authorize/:action.json'
-                }
-            }
     }
 
     function bootstrap($ocLazyLoad) {
