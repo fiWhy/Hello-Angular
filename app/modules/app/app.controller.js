@@ -8,12 +8,14 @@
         var vm = this;
         vm.isLoggedIn = false;
         vm.alerts = [];
+        vm.logout = logout;
         
         activate();
         
         function activate(){
             vm.isLoggedIn = isLoggedIn();
-               registerAlerts(vm.alerts);
+               registerAlerts();
+               registerAuth();
             if(vm.isLoggedIn){
                 vm.menu = MenuService.getMainMenu();
             }else{
@@ -23,13 +25,27 @@
         
         
         function isLoggedIn() {
+            AuthorizeService.registerAuthObserver(function(){
+                vm.isLoggedIn = AuthorizeService.isLoggedIn()
+            })
             return AuthorizeService.isLoggedIn();
         }
         
-        
         /* Alert handler */
-        function registerAlerts(listener) {
-            AlertService.registerErrorListener(alertDeeds);
+        function registerAlerts() {
+            AlertService.registerAlertObserver(alertDeeds);
+        }
+        
+        function registerAuth() {
+            AuthorizeService.registerAuthObserver(loginDeeds);
+        }
+        
+        function logout() {
+            AlertService.logout(alertDeeds);
+        }
+        
+        function loginDeeds() {
+            console.log('Login done');
         }
         
         function alertDeeds(alert){

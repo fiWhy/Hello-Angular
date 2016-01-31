@@ -2,16 +2,14 @@
     'use strict';
     
     angular.module('app.core', [
-        'oc.lazyLoad',
-
+        'datatables',
+        
+        'app.core.constants',
         'app.core.services',
         'app.core.directives',
-
-        'ngAnimate',
-        'ngResource',
-        'pascalprecht.translate',
-        'angular-loading-bar',
-        'ui.router'
+        
+        'app.core.autoloader',
+        
     ]);
 
 })();

@@ -24,6 +24,14 @@
                     ],
                 },
                 
+                /* Template Directive */
+                {
+                    name: 'TemplateDirective',
+                    files: [
+                        'app/core/directives/template/template.directive.js',
+                    ],
+                },
+                
             ]
         })
     }

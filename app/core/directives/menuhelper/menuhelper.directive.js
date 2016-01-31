@@ -2,10 +2,10 @@
     'use strict';
     
     angular.module('app.core.directives')
-        .directive('menuHelper', menuHelper);
+        .directive('menuHelper', MenuHelperDirective);
     
-    menuHelper.$inject = ['$rootScope', '$state', '$timeout'];
-    function menuHelper($rootScope, $state, $timeout) {
+    MenuHelperDirective.$inject = ['$rootScope', '$state', '$timeout'];
+    function MenuHelperDirective($rootScope, $state, $timeout) {
         
         function makeActive(el){
                 $('li.active').removeClass('active');

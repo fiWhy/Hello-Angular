@@ -6,17 +6,17 @@
 
     AlertService.$inject = ['$rootScope', '$compile'];
     function AlertService($rootScope, $compile) {
-        var errorListeners = [];
+        var alertListeners = [];
         
         return {
             success: success,
             error: error,
             info: info,
-            registerErrorListener: registerErrorListener
+            registerAlertObserver: registerAlertObserver
         };
         
-        function registerErrorListener(listener) {
-            errorListeners.push(listener);
+        function registerAlertObserver(listener) {
+            alertListeners.push(listener);
         }
         
         function success(head, body) {
@@ -33,7 +33,7 @@
         }
             
         function throwMessage(type, head, body) {
-            errorListeners.forEach(function(callback){
+            alertListeners.forEach(function(callback){
                 callback({
                     type: type,
                     head: head,

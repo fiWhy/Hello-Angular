@@ -3,26 +3,22 @@
     angular.module('app.core')
         .config(router);
 
-    function loadModules(modules) {
-        return {
-            loadModules: ['$ocLazyLoad', '$timeout', function($ocLazyLoad, $timeout){
-                    return $ocLazyLoad.load(modules);
-            }]
-        }
-    }
-    
     router.$inject = ['$stateProvider', '$urlRouterProvider', 'config']
     function router($stateProvider, $urlRouterProvider, config) {
         $urlRouterProvider.otherwise('/dashboard');
         $stateProvider
-            .state('admin', {
+            .state('app', {
                 url: "/",
                 controller: 'AppController as vm',
                 templateUrl: config.documentRoot + '/view/layout/index.html',
-                resolve: loadModules('App')
+                resolve: {
+                        loadModules: ['$ocLazyLoad', '$timeout', function($ocLazyLoad, $timeout){
+                        return $ocLazyLoad.load('App');
+                    }]
+                }
             })
         
-            .state('admin.dashboard', {
+            .state('app.dashboard', {
                 url: "dashboard",
                 views: {
                    content: {
@@ -30,19 +26,30 @@
                        templateUrl: config.documentRoot + '/modules/dashboard/view/dashboard.template.html',
                    } 
                 },
-                resolve: loadModules('Dashboard')
+                resolve: {
+                        loadModules: ['$ocLazyLoad', '$timeout', function($ocLazyLoad, $timeout){
+                        return $ocLazyLoad.load('Dashboard');
+                    }]
+                }
             })
-        
-            .state('admin.login', {
-                url: "login",
-                controller: 'LoginController as vm',
+            .state('app.user', {
+                url: "user/:controller",
                 views: {
                    content: {
-                       controller: 'LoginController as vm',
-                       templateUrl: config.documentRoot + '/modules/login/view/login.template.html',
+                        controllerProvider: function($stateParams) {
+                            console.log($stateParams);
+                            var ctrlName = 'User' + ($stateParams.controller|| '') + "Controller";
+                            console.log(ctrlName);
+                            return ctrlName;
+                        },
+                       templateUrl: config.documentRoot + '/modules/user/view/user.template.html',
                    } 
                 },
-                resolve: loadModules('Login')
+                resolve: {
+                        loadModules: ['$ocLazyLoad', '$timeout', function($ocLazyLoad, $timeout){
+                        return $ocLazyLoad.load('User');
+                    }]
+                }
             })
     }
     

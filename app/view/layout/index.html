@@ -1,11 +1,12 @@
-<!--    <div data-ng-if="vm.isLoggedIn;" class="navbar navbar-fixed-top" ng-include="'/admin-application/app/view/elements/navbar.html'"></div>-->
-<div data-ng-if="vm.isLoggedIn;" class="subnavbar"  ng-include="'app/view/elements/sub-navbar.html'"></div>
+    <div data-ng-if="vm.isLoggedIn;" class="navbar navbar-fixed-top" template="/view/elements/navbar.html"></div>
+<div data-ng-if="vm.isLoggedIn;" class="subnavbar"  template="/view/elements/sub-navbar.html"></div>
 
 <div class="main">
   <div class="main-inner">
       <div id="error-block">
-        <div data-ng-include="'app/view/elements/errors.html'"></div>
+        <div template="/view/elements/errors.html"></div>
       </div>
+      
     <div class="container" ui-view="content"></div>
   </div>
 </div>

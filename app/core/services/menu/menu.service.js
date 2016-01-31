@@ -14,7 +14,7 @@
                 {
                     title: 'Dashboard',
                     icon: 'icon-dashboard',
-                    state: 'admin.dashboard',
+                    state: 'app.dashboard',
                     link: '/dashboard'
                 },
                 {
@@ -24,10 +24,16 @@
                         {
                             title: 'Login',
                             icon: 'icon-dashboard',
-                            state: 'admin.login',
-                            link: '/login',
-                        }
+                            state: "app.user({'controller': 'login'})",
+                            link: '/user',
+                        },
                     ]
+                },
+                {
+                    title: 'Logout',
+                    icon: 'icon-dashboard',
+                    state: "app.user('controller':'Logout')",
+                    link: '/user/logout',
                 }
             ]
         }

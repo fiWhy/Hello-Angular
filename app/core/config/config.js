@@ -1,26 +1,12 @@
 (function(){
     'use strict';
     angular.module('app.core')
-        .constant('config', configConst())
+    .constant('config', ConfigConstant())
             .config(config)
             .run(bootstrap);
 
-    function configConst() {
-        var apiUrl = '/api';
-        return  {
-            apiUrl: apiUrl,
-            documentRoot: '/app',
-            mainPaths: {
-                menu: apiUrl + 'menu',
-                authorize: apiUrl + 'authorize/:action'
-            },
-            language: 'en'
-
-        }
-    }
-
-    config.$inject = ['$locationProvider', '$translateProvider', 'config'];
-    function config($locationProvider, $translateProvider, config) {
+    config.$inject = ['$locationProvider', '$translateProvider'];
+    function config($locationProvider, $translateProvider) {
         $locationProvider.html5Mode({
             enabled: false,
             requireBase: false
@@ -32,16 +18,35 @@
 
     }
 
-    bootstrap.$inject = ['$ocLazyLoad', '$rootScope', 'config', '$translate'];
-    function bootstrap($ocLazyLoad, $rootScope, config, $translate) {
+    function ConfigConstant(){
+        var apiUrl = '/api';
+        return  {
+            apiUrl: apiUrl,
+            documentRoot: 'app',
+            modulesRoot: 'app/modules',
+            mainPaths: {
+                menu: apiUrl + 'menu',
+                authorize: apiUrl + 'authorize/:action'
+            },
+            language: 'en',
+        }
+    }
+    
+    bootstrap.$inject = ['$ocLazyLoad', '$rootScope', '$translate', 'config'];
+    function bootstrap($ocLazyLoad, $rootScope, $translate, config) {
         
          $rootScope.$on('$stateChangeSuccess', function(){
             $translate.use(config.language);
          })
          
-        return $ocLazyLoad.load(['App', 'AuthorizeService', 
-                                 'MenuService', 'MenuHelperDirective', 
-                                 'AlertService', 'AlertDirective']);
+        console.log('loaded');
+        return $ocLazyLoad.load(['MainConstants',
+                                 'App', 'AppService', 
+                                 'AuthorizeService', 
+                                 'MenuService', 'MenuHelperDirective',
+                                 'TemplateDirective',
+                                 'AlertService', 'AlertDirective',
+                                 'LoadModules']);
     }
     
 })()

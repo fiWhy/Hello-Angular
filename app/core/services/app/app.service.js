@@ -1,17 +1,22 @@
 (function(){
     'use strict';
     
-    angular.module('app.core')
+    angular.module('app.core.services')
             .service('AppService', AppService);
 
-    AppService.$inject = ['$translate'];
-    function AppService($translate) {
+    AppService.$inject = ['AuthorizeService'];
+    function AppService(AuthorizeService) {
         return {
-            initLanguage: initLanguage
+            initLanguage: initLanguage,
+            logout: logout,
         }
         
             function initLanguage(lang) {
                 $translate.use(lang);
+            }
+        
+            function logout() {
+                AuthorizeService.logout();
             }
     }
 })()

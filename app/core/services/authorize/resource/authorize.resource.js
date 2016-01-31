@@ -18,6 +18,12 @@
                 params: {
                     action: 'login'
                 }
+            },
+            logout: {
+                method: 'GET',
+                params: {
+                    action: 'logout'
+                }
             }
         });
     }

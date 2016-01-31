@@ -12,8 +12,7 @@
                 {
                     name: 'App',
                     files: [
-                        'app/modules/app/app.controller.js',
-                        'app/core/services/app/app.service.js',
+                        'app/modules/app/app.controller.js'
                         ]
                 },
                 
@@ -24,20 +23,20 @@
                         'app/modules/dashboard/dashboard.module.js',
                         'app/modules/dashboard/dashboard.controller.js',
                         'app/modules/dashboard/service/dashboard.service.js',
-                        //'app/modules/dashboard/language/dashboard.languages.js',
-                        'app/modules/dashboard/dashboard.routes.js',
+                        'app/modules/dashboard/dashboard.routes.js'
                     ]
                 },
                 
                 /* Login */
                 {
-                    name: 'Login',
+                    name: 'User',
                     files: [
-                        'app/modules/login/login.module.js',
-                        'app/modules/login/config/login.config.js',
-                        'app/modules/login/login.controller.js',
-                        'app/modules/login/service/login.service.js',
-                        'app/modules/login/login.routes.js',
+                        'app/modules/user/user.module.js',
+                        'app/modules/user/config/user.config.js',
+                        'app/modules/user/user.controller.js',
+                        'app/modules/user/user.login.controller.js',
+                        'app/modules/user/service/user.service.js',
+                        'app/modules/user/user.routes.js',
                         'css/pages/signin.css'
                     ]
                 }
