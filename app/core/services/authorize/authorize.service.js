@@ -11,15 +11,15 @@
             login: login
         }
 
-        function isLoggedIn() {
+        function isLoggedIn(successCallback, errorCallback) {
             return true;
             //return AuthorizeResource.isLoggedIn();
         }
 
-        function login(data) {
-            console.log(data);
-            return true;
-            //return AuthorizeResource.login();
+        function login(data, successCallback, errorCallback) {
+            successCallback(true);
+//            return AuthorizeResource.login()
+//                    .then(successCallback, errorCallback);
         }
     }
 })()

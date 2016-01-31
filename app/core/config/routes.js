@@ -11,13 +11,14 @@
         }
     }
     
-    function router($stateProvider, $urlRouterProvider) {
+    router.$inject = ['$stateProvider', '$urlRouterProvider', 'config']
+    function router($stateProvider, $urlRouterProvider, config) {
         $urlRouterProvider.otherwise('/dashboard');
         $stateProvider
             .state('admin', {
                 url: "/",
                 controller: 'AppController as vm',
-                templateUrl: 'app/view/layout/index.html',
+                templateUrl: config.documentRoot + '/view/layout/index.html',
                 resolve: loadModules('App')
             })
         
@@ -26,7 +27,7 @@
                 views: {
                    content: {
                        controller: 'DashboardController as vm',
-                       templateUrl:'app/modules/dashboard/view/dashboard.template.html',
+                       templateUrl: config.documentRoot + '/modules/dashboard/view/dashboard.template.html',
                    } 
                 },
                 resolve: loadModules('Dashboard')
@@ -38,7 +39,7 @@
                 views: {
                    content: {
                        controller: 'LoginController as vm',
-                       templateUrl:'app/modules/login/view/login.template.html',
+                       templateUrl: config.documentRoot + '/modules/login/view/login.template.html',
                    } 
                 },
                 resolve: loadModules('Login')

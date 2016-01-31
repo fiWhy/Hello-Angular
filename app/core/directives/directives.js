@@ -14,7 +14,16 @@
                     files: [
                         'app/core/directives/menuhelper/menuhelper.directive.js',
                     ],
-                }
+                },
+                
+                /* Alert Directive */
+                {
+                    name: 'AlertDirective',
+                    files: [
+                        'app/core/directives/alert/alert.directive.js',
+                    ],
+                },
+                
             ]
         })
     }

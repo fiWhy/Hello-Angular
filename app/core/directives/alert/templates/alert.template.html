@@ -1,0 +1,11 @@
+<div data-ng-init="destroy();" class="alert" data-ng-class="{
+                                  'alert': type == 'error',
+                                  'alert-block': block,
+                                  'alert-success': type == 'success',
+                                  'alert-info': type == 'info'
+                                  }">
+   <button type="button" class="close" data-ng-click="remove()" data-dismiss="alert">×</button>
+   <h4 data-ng-show="title && block" data-ng-bind="title"></h4>
+   <strong data-ng-show="title && !block"></strong>
+    <data-ng-transclude></data-ng-transclude>
+</div>

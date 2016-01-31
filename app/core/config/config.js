@@ -9,6 +9,7 @@
         var apiUrl = '/api';
         return  {
             apiUrl: apiUrl,
+            documentRoot: '/app',
             mainPaths: {
                 menu: apiUrl + 'menu',
                 authorize: apiUrl + 'authorize/:action'
@@ -38,7 +39,9 @@
             $translate.use(config.language);
          })
          
-        return $ocLazyLoad.load(['App', 'AuthorizeService', 'MenuService', 'MenuHelperDirective', 'AlertService']);
+        return $ocLazyLoad.load(['App', 'AuthorizeService', 
+                                 'MenuService', 'MenuHelperDirective', 
+                                 'AlertService', 'AlertDirective']);
     }
     
 })()
