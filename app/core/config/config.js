@@ -31,22 +31,22 @@
             language: 'en',
         }
     }
-    
+
     bootstrap.$inject = ['$ocLazyLoad', '$rootScope', '$translate', 'config'];
     function bootstrap($ocLazyLoad, $rootScope, $translate, config) {
-        
+
          $rootScope.$on('$stateChangeSuccess', function(){
             $translate.use(config.language);
          })
-         
-        console.log('loaded');
+
+        console.log('Application bootstrap');
         return $ocLazyLoad.load(['MainConstants',
-                                 'App', 'AppService', 
-                                 'AuthorizeService', 
-                                 'MenuService', 'MenuHelperDirective',
+                                 'App', 'AppService',
+                                 'AuthorizeService',
+                                 'MenuService', 'MenuActiveDirective',
                                  'TemplateDirective',
-                                 'AlertService', 'AlertDirective',
-                                 'LoadModules']);
+                                 'AlertService', 'AlertDirective'
+                                ]);
     }
-    
+
 })()

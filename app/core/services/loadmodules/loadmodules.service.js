@@ -4,24 +4,24 @@
     angular.module('app.core.services')
         .service('LoadModules', LoadModules);
     
-    LoadModules.$inject = ['$ocLazyLoad', '$timeout', 'config'];
-    function LoadModules($ocLazyLoad, $timeoutreturn, config) {
+    LoadModules.$inject = ['$ocLazyLoad', '$timeout', 'config', '$state', '$stateParams'];
+    function LoadModules($ocLazyLoad, $timeoutreturn, config, $state, $stateParams) {
         return {
             prepare: prepare
         };
                           
         function prepare(modulesList) {
-            var modules = [],
+            var modules = [];
         
             if(Array.isArray(modules)) {
                 modulesList.forEach(function(value){
-                    modules.push(config.modulesRoot + '/' + value + '/' + value + '.module.js');
+                    modules.push(config.modulesRoot + '/' + value + '/config/' + value + '.config.js');
                 })
             } else {
-                 modules.push(config.modulesRoot + '/' + modules + '/' + modules + '.module.js');
+                 modules.push(config.modulesRoot + '/' + modules + '/config/' + modules + '.config.js');
             }
             
-            $ocLazyLoad.load(modules);
+            return $ocLazyLoad.load(modules)
         }
                         
     }

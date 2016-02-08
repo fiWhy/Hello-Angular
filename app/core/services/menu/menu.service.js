@@ -24,8 +24,8 @@
                         {
                             title: 'Login',
                             icon: 'icon-dashboard',
-                            state: "app.user({'controller': 'login'})",
-                            link: '/user',
+                            state: "app.user({'controller': 'Login'})",
+                            link: '/user/login',
                         },
                     ]
                 },

@@ -1,5 +1,5 @@
 (function(){
-    angular.module('app.modules.dashboard')
+    angular.module('app.modules')
         .service('DashboardLanguages', DashboardLanguages);
 
     function DashboardLanguages() {

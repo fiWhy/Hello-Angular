@@ -1,11 +1,11 @@
 (function(){
     'use strict';
     
-    angular.module('app.modules.user')
+    angular.module('app.modules')
         .controller('UserLoginController', UserLoginController);
     
     UserLoginController.$inject = ['config', 'AuthorizeService', '$translate', 'AlertService'];
-    function UserLoginController() {
+    function UserLoginController(config, AuthorizeService, $translate, AlertService) {
         var vm = this;
 
         vm.login = login;
@@ -16,8 +16,8 @@
         function activate() {
         }
         
-
         function login(){
+            console.log('login');
             AuthorizeService.login(vm.loginData, function(response){
                 $translate(['SUCCESS_AUTHORIZE_HEAD', 'SUCCESS_AUTHORIZE_BODY'])
                         .then(function(translations){

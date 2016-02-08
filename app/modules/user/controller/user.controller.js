@@ -1,7 +1,7 @@
 (function(){
     'use strict';
     
-    angular.module('app.modules.user')
+    angular.module('app.modules')
             .controller('UserController', UserController);
 
 

@@ -10,12 +10,12 @@
             modules: [
                 /* Menu Helper */
                 {
-                    name: 'MenuHelperDirective',
+                    name: 'MenuActiveDirective',
                     files: [
-                        'app/core/directives/menuhelper/menuhelper.directive.js',
+                        'app/core/directives/menuactive/menuactive.directive.js',
                     ],
                 },
-                
+
                 /* Alert Directive */
                 {
                     name: 'AlertDirective',
@@ -23,7 +23,7 @@
                         'app/core/directives/alert/alert.directive.js',
                     ],
                 },
-                
+
                 /* Template Directive */
                 {
                     name: 'TemplateDirective',
@@ -31,7 +31,7 @@
                         'app/core/directives/template/template.directive.js',
                     ],
                 },
-                
+
             ]
         })
     }

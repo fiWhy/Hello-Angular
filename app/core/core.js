@@ -6,9 +6,7 @@
         
         'app.core.constants',
         'app.core.services',
-        'app.core.directives',
-        
-        'app.core.autoloader',
+        'app.core.directives'
         
     ]);
 
