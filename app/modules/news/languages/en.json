@@ -1,0 +1,13 @@
+{
+  "LOGIN_HEAD": "Member Login",
+  "SIGN_IN": "Sign In",
+  "PROVIDE_DETAILS": "Please provide your details",
+  "REMEMBER_ME": "Keep me signed in",
+  "RESET_PASSWORD": "Reset Password",
+  "USERNAME": "Username",
+  "PASSWORD": "Password",
+  "ERROR_AUTHORIZE_HEAD": "Authorize error!",
+  "ERROR_AUTHORIZE_BODY": "You've entered wrong credentials. Please, try again later!",
+  "SUCCESS_AUTHORIZE_HEAD": "Hi there!",
+  "SUCCESS_AUTHORIZE_BODY": "You've been successfully authorized!"
+}

@@ -26,6 +26,11 @@
                             icon: 'icon-dashboard',
                             state: "app.user({'controller': 'Login'})",
                             link: '/user/login',
+                        },{
+                            title: 'News',
+                            icon: 'icon-file',
+                            state: "app.news",
+                            link: '/news',
                         },
                     ]
                 },

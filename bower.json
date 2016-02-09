@@ -36,6 +36,7 @@
     "angular-translate": "~2.9.0",
     "angular-translate-loader-static-files": "~2.9.0",
     "angular-cookies": "~1.4.9",
-    "angular-datatables": "~0.5.3"
+    "angular-datatables": "~0.5.3",
+    "angular-smart-table": "~2.1.7"
   }
 }

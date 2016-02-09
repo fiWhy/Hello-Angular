@@ -11,13 +11,12 @@
             modules : [
          /* Login */
                 {
-                    name: 'User',
+                    name: 'News',
                     files: [
-                        config.documentRoot + '/modules/user/config/user.config.js',
-                        config.documentRoot + '/modules/user/controller/user.controller.js',
-                        config.documentRoot + '/modules/user/controller/user.login.controller.js',
-                        config.documentRoot + '/modules/user/service/user.service.js',
-                        '/css/pages/signin.css'
+                        config.documentRoot + '/modules/news/controller/news.controller.js',
+                        config.documentRoot + '/modules/news/service/news.service.js',
+                        config.documentRoot + '/modules/news/service/news.service.js',
+                        '/css/pages/faq.css'
                     ]
                 },
                 ]
@@ -26,18 +25,18 @@
 
     config.$inject = ['$translateProvider', 'config', '$stateProvider'];
     function config($translateProvider, config, $stateProvider) {
-        console.log('Init User Config');
-        $stateProvider.state('app.user', {
-                                                                                                                            url: "user/:controller",
+        console.log('Init News Config');
+        $stateProvider.state('app.news', {
+                url: "news",
                 views: {
                    content: {
                         controllerProvider: function($stateParams) {
-                            var ctrlName = 'User' + ($stateParams.controller|| '') + "Controller as vm";
+                            var ctrlName = 'News' + ($stateParams.controller|| '') + "Controller as vm";
                             return ctrlName;
                         },
                        templateUrl: function($stateParams) {
                            var tmp = $stateParams.controller? $stateParams.controller.toLowerCase() + '.': '';
-                            var fullTemplate = config.documentRoot + '/modules/user/view/user.' + tmp + 'template.html';
+                            var fullTemplate = config.documentRoot + '/modules/news/view/news.' + tmp + 'template.html';
 
                            return fullTemplate;
                        }
@@ -51,7 +50,7 @@
                         suffix: '.json'
                     });
 
-                        return $ocLazyLoad.load('User');
+                        return $ocLazyLoad.load('News');
                     }]
                 }
             })
