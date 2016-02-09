@@ -1,18 +1,18 @@
 (function(){
     'use strict'
 
-    angular.module('app.core.directives', [])
+    angular.module('app.core.directives', ['app.core'])
         .config(Directives)
 
-    Directives.$inject = ['$ocLazyLoadProvider'];
-    function Directives($ocLazyLoadProvider) {
+    Directives.$inject = ['$ocLazyLoadProvider', 'config'];
+    function Directives($ocLazyLoadProvider, config) {
         $ocLazyLoadProvider.config({
             modules: [
                 /* Menu Helper */
                 {
                     name: 'MenuActiveDirective',
                     files: [
-                        'app/core/directives/menuactive/menuactive.directive.js',
+                        config.documentRoot + '/core/directives/menuactive/menuactive.directive.js',
                     ],
                 },
 
@@ -20,7 +20,7 @@
                 {
                     name: 'AlertDirective',
                     files: [
-                        'app/core/directives/alert/alert.directive.js',
+                        config.documentRoot + '/core/directives/alert/alert.directive.js',
                     ],
                 },
 
@@ -28,7 +28,15 @@
                 {
                     name: 'TemplateDirective',
                     files: [
-                        'app/core/directives/template/template.directive.js',
+                        config.documentRoot + '/core/directives/template/template.directive.js',
+                    ],
+                },
+
+                /* Smart table Directive */
+                {
+                    name: 'SmartTableDirective',
+                    files: [
+                        config.documentRoot + '/core/directives/template/template.directive.js',
                     ],
                 },
 

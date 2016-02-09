@@ -43,7 +43,7 @@
         return $ocLazyLoad.load(['MainConstants',
                                  'App', 'AppService',
                                  'AuthorizeService',
-                                 'MenuService', 'MenuActiveDirective',
+                                 'MenuService', 'MenuActiveDirective', 'SmartTableDirective',
                                  'TemplateDirective',
                                  'AlertService', 'AlertDirective'
                                 ]);

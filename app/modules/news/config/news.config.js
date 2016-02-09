@@ -46,7 +46,7 @@
                     loadModules: ['$ocLazyLoad', '$timeout', function($ocLazyLoad, $timeout){
 
                     $translateProvider.useStaticFilesLoader({
-                        prefix: config.documentRoot + '/modules/user/languages/',
+                        prefix: config.documentRoot + '/modules/news/languages/',
                         suffix: '.json'
                     });
 
