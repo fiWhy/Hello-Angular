@@ -37,7 +37,7 @@
                 {
                     title: 'Logout',
                     icon: 'icon-dashboard',
-                    state: "app.user('controller':'Logout')",
+                    state: "app.user({'controller':'Logout'})",
                     link: '/user/logout',
                 }
             ]

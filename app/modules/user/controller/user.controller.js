@@ -1,6 +1,6 @@
 (function(){
     'use strict';
-    
+
     angular.module('app.modules')
             .controller('UserController', UserController);
 
@@ -13,8 +13,8 @@
 
         function activate() {
         }
-        
-        
+
+
         console.log('User page');
     }
 })();

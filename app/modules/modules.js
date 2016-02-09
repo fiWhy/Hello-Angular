@@ -1,9 +1,9 @@
 (function(){
     'use strict';
-    
+
     angular.module('app.modules', [])
             .config(Modules);
-    
+
     Modules.$inject = ['$ocLazyLoadProvider'];
     function Modules($ocLazyLoadProvider) {
         $ocLazyLoadProvider.config({
@@ -12,7 +12,7 @@
                 {
                     name: 'App',
                     files: [
-                        'app/modules/app/app.controller.js'
+                        'app/modules/app/controller/app.controller.js'
                         ]
                 },
             ]

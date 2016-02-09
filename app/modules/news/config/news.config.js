@@ -16,7 +16,7 @@
                         config.documentRoot + '/modules/news/controller/news.controller.js',
                         config.documentRoot + '/modules/news/service/news.service.js',
                         config.documentRoot + '/modules/news/service/news.service.js',
-                        '/css/pages/faq.css'
+                        'css/pages/faq.css'
                     ]
                 },
                 ]
@@ -43,13 +43,15 @@
                    }
                 },
                 resolve: {
-                    loadModules: ['$ocLazyLoad', '$timeout', function($ocLazyLoad, $timeout){
+                    loadModules: ['$ocLazyLoad', '$timeout', '$translate', function($ocLazyLoad, $timeout, $translate){
 
                     $translateProvider.useStaticFilesLoader({
                         prefix: config.documentRoot + '/modules/news/languages/',
                         suffix: '.json'
                     });
 
+                    $translate.use(config.language);
+                    
                         return $ocLazyLoad.load('News');
                     }]
                 }

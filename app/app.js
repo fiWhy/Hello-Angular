@@ -1,6 +1,6 @@
 (function(){
     'use strict';
-    
+
     angular.module('app', [
         /* System */
         'ngAnimate',
@@ -9,7 +9,8 @@
         'pascalprecht.translate',
         'angular-loading-bar',
         'ui.router',
-        
+
+        'app.config',
         'app.core',
         'app.modules'
     ]);
