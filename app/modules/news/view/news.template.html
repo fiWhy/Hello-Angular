@@ -1,16 +1,52 @@
-<div class="widget">
-    <div class="widget-header">
-        <i class="icon-bar-chart"></i>
-            <h3>
-               {{ 'NEWS_HEAD' | translate}}
-             </h3>
-    </div>
-    <!-- /widget-header -->
-    <div class="widget-content">
-
-        <div class="span3 ML0">
-        </div>
-
-        </div>
-
-</div>
+<smart-table
+      marking="{
+            fields: {
+                  id: {
+                     title: 'ID',
+                     field: 'id',
+                     editable: false
+                  },
+                  title: {
+                     title: 'Title',
+                     field: 'title',
+                     editable: true,
+                  },
+                  content: {
+                     title: 'Content',
+                     field: 'content',
+                     editable: true
+                  }
+            },
+            deeds: {
+                search: {
+                    isset: true,
+                    byFields: ['id', 'title', 'content'],
+                    callback: vm.search,
+                },
+                shortedit: {
+                    isset: true,
+                    callback: vm.shortEdit,
+                },
+                edit: {
+                    isset: true,
+                    fields: [
+                        {
+                            label: 'Title',
+                            area: 'input',
+                            field: 'title'
+                        },
+                        {
+                            label: 'Content',
+                            area: 'textarea',
+                            field: 'content'
+                        }
+                    ],
+                    callback: vm.edit
+                }
+            }
+         }"
+      data="vm.news"
+      pagination="vm.getPage"
+      count-pages="vm.countPages"
+      title="{{ 'NEWS_HEAD' || translate}}">
+</smart-table>

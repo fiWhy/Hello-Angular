@@ -36,7 +36,7 @@
                 {
                     name: 'SmartTableDirective',
                     files: [
-                        config.documentRoot + '/core/directives/template/template.directive.js',
+                        config.documentRoot + '/core/directives/table/table.directive.js',
                     ],
                 },
 

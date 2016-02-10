@@ -36,6 +36,7 @@
     function bootstrap($ocLazyLoad, $rootScope, $translate, config) {
         console.log('Application bootstrap');
         return $ocLazyLoad.load(['MainConstants',
+                                 'MainFilters',
                                  'App', 'AppService',
                                  'AuthorizeService',
                                  'MenuService', 'MenuActiveDirective', 'SmartTableDirective',
