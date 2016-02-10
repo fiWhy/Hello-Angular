@@ -33,15 +33,15 @@
         }
 
         function shortEdit(data) {
-
+            console.log(data);
         }
 
         function edit(data) {
-
+            console.log(data);
         }
 
         function search(data) {
-
+            console.log(data);
         }
 
 

@@ -21,26 +21,32 @@
       function prepareBody(fields, data) {
          var result = [],
              field;
-            data.forEach(function(value){
+            data.forEach(function(value, rowIndex){
                var td = [];
-               for(var item in fields) {
-                  if(!value[fields[item].field])
-                     throw 'Field name is not set in data array! Got ' + fields[item].field + ' in "' + item + '"';
+               fields.forEach(function(cellValue, cellIndex){
+                  if(!value[cellValue.field])
+                     throw 'Field name is not set in data array! Got ' + cellValue.field + ' in "' + cellValue.field + '"';
+
                      var settings = {};
                         field = {
-                            value: value[fields[item].field],
+                            value: value[cellValue.field],
+                            field: cellValue.field,
                             id: value.id
                         };
+                        settings.cellIndex = cellIndex;
+                        settings.rowIndex = rowIndex;
                         settings.data = field;
-                        settings.editable = fields[item].editable
+                        settings.editable = cellValue.editable
                         if(settings.editable && !settings.type)
-                            settings.type = fields[item].type || 'input';
+                            settings.type = cellValue.type || 'input';
 
 
                      td.push(settings);
-
-               }
-               result.push(td);
+               })
+               result.push({
+                 rowIndex: rowIndex,
+                 rowData: td
+               });
             })
          return result;
       }
@@ -51,9 +57,12 @@
                 marking: '=',
                 data: '=',
                 title: '@',
-                pagination: '&',
+                pagination: '=',
                 countPages: '=',
                 currentPage: '=',
+                singleEdit: '=',
+                multipleEdit: '=',
+                search: '='
             },
             templateUrl: config.documentRoot +  '/core/directives/table/templates/table.template.html',
             controller: function($scope, $element, $attrs) {
@@ -68,23 +77,8 @@
                      $scope.head = prepereHead(fields);
                      $scope.body = prepareBody(fields, newVal);
 
-                     $scope.getPage = $scope.pagination();
-
-                     var singleNewData,
-                         singleBeforeData;
-
-                     $scope.singleFieldEdit = function(newData, beforeData) {
-                         singleNewData = newData;
-                         singleBeforeData = beforeData;
-
-                        //  console.log(newData);
-                        //  console.log(beforeData);
-
-                        console.log('dbl');
-                     }
-
-                     $scope.cancelEditing = function(){
-                         singleNewData = singleBeforeData;
+                     $scope.fieldEdit = function(data) {
+                        $scope.singleEdit(data);
                      }
 
                   }

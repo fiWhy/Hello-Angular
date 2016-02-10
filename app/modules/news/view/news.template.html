@@ -1,24 +1,24 @@
 <smart-table
       marking="{
-            fields: {
-                  id: {
+            fields: [
+                  {
                      title: 'ID',
                      field: 'id',
                      editable: false
                   },
-                  title: {
+                  {
                      title: 'Title',
                      field: 'title',
                      editable: true,
                      type: 'input',
                   },
-                  content: {
+                  {
                      title: 'Content',
                      field: 'content',
                      editable: true,
                      type: 'textarea',
                   }
-            },
+            ],
             deeds: {
                 search: {
                     isset: true,
@@ -50,5 +50,8 @@
       data="vm.news"
       pagination="vm.getPage"
       count-pages="vm.countPages"
+      single-edit="vm.shortEdit"
+      multiple-edit="vm.edit"
+      search="vm.search"
       title="{{ 'NEWS_HEAD' || translate}}">
 </smart-table>

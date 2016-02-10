@@ -6,25 +6,6 @@
 	fieldIsEditable.$inject = ['$compile'];
 	function fieldIsEditable($compile) {
 
-		function clone(obj) {
-    		if (null == obj || "object" != typeof obj) return obj;
-    			var copy = obj.constructor();
-    			for (var attr in obj) {
-        			if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
-    			}
-    		return copy;
-		}
-		function transformField($element) {
-
-		}
-
-		function appendCancelEdition($element) {
-			var el = $element
-						.append('<button class="btn btn-danger" data-ng-click="cancelCurrentEdition();">Cancel</button>')
-						.find('.btn-danger');
-				return el;
-		}
-
 		function appendField($element, data, successCallback) {
 			var input;
 			var block = $('<div />', {
@@ -33,10 +14,10 @@
 
 			switch(data.type){
 				case 'textarea':
-					input = '<textarea data-ng-model="fieldData"></textarea>';
+					input = '<textarea data-ng-model="fieldData.data.value"></textarea>';
 					break;
 				case 'input':
-					input = '<input data-ng-model="fieldData">';
+					input = '<input data-ng-model="fieldData.data.value">';
 					break;
 			}
 
@@ -48,6 +29,13 @@
 					successCallback(el);
 		}
 
+		function compact(data) {
+				var newData = {};
+					newData[data.field] = data.value;
+					newData.id = data.id;
+				return newData;
+		}
+
 		return {
 			restrict: 'A',
 			require: '^smartTable',
@@ -56,22 +44,20 @@
 			controller: function($scope, $element, $attrs){
 				var input;
 				var showAble;
-				var cancelEdition;
-				var beforeData,
-					newData = {};
 
 				$scope.fieldData;
 
-				function blocksToggle(){
+				function blocksToggle() {
 						showAble.toggle();
 						input.toggle();
 				}
 
 				$scope.appendEditable = function(data) {
-					beforeData = clone(data);
 					appendField($element, data, function(el){
 						input = el;
-						$scope.fieldData = data.data.value;
+
+						$scope.fieldData = data;
+
 						$compile(el)($scope);
 							el.css('display', 'none');
 					});
@@ -83,24 +69,9 @@
 						blocksToggle();
 				}
 
-				$scope.finishEditing = function(){
-					console.log(beforeData);
-					newData = clone(beforeData);
-						newData.data.value = $scope.fieldData;
-					$scope.$parent.singleFieldEdit(newData, beforeData);
+				$scope.finishEditing = function() {
+						$scope.fieldEdit(compact($scope.fieldData.data));
 						blocksToggle();
-						if(!cancelEdition) {
-							cancelEdition = appendCancelEdition($element);
-							$compile(cancelEdition)($scope);
-						} else {
-							cancelEdition.show();
-						}
-				}
-
-				$scope.cancelCurrentEdition = function() {
-						newData = beforeData;
-						$scope.$parent.singleFieldEdit(newData, beforeData);
-						cancelEdition.hide();
 				}
 
 			}
