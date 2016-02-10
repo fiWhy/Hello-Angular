@@ -16,6 +16,7 @@
                         config.documentRoot + '/modules/news/controller/news.controller.js',
                         config.documentRoot + '/modules/news/service/news.service.js',
                         config.documentRoot + '/modules/news/service/news.service.js',
+                        config.documentRoot + '/modules/news/resource/news.resource.js',
                         'css/pages/faq.css'
                     ]
                 },
@@ -51,7 +52,7 @@
                     });
 
                     $translate.use(config.language);
-                    
+
                         return $ocLazyLoad.load('News');
                     }]
                 }
