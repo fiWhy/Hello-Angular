@@ -13,13 +13,20 @@
      </thead>
      <tbody>
         <tr data-ng-repeat="tr in body">
-          <td data-ng-repeat="td in tr"
-                data-ng-bind="td.data"
-                data-ng-class="{
-                    'is-editable': td.editable
-                }">
-            </td>
-          <td class="td-actions"><a href="javascript:;" class="btn btn-small btn-success"><i class="btn-icon-only icon-ok"> </i></a><a href="javascript:;" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td>
+          <td data-ng-if="!td.editable" data-ng-repeat="td in tr" data-ng-bind="td.data.value"></td>
+
+          <td data-ng-if="td.editable" field-is-editable field-type="td.type" data-ng-init="appendEditable(td)" data-ng-repeat="td in tr">
+            <div data-ng-dblclick="dblclick();" class="showable-field">{{ td.data.value }}</div>
+          </td>
+
+          <td class="td-actions">
+              <a href="javascript:;" class="btn btn-small btn-success">
+                  <i class="btn-icon-only icon-ok"> </i>
+              </a>
+              <a href="javascript:;" class="btn btn-danger btn-small">
+                  <i class="btn-icon-only icon-remove"> </i>
+              </a>
+          </td>
         </tr>
      </tbody>
     </table>

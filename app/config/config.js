@@ -37,11 +37,12 @@
         console.log('Application bootstrap');
         return $ocLazyLoad.load(['MainConstants',
                                  'MainFilters',
-                                 'App', 'AppService',
+                                 'AppService',
                                  'AuthorizeService',
                                  'MenuService', 'MenuActiveDirective', 'SmartTableDirective',
                                  'TemplateDirective',
-                                 'AlertService', 'AlertDirective'
+                                 'AlertService', 'AlertDirective',
+                                 'App' 
                                 ]);
     }
 
