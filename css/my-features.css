@@ -14,7 +14,19 @@ input.ng-touched.ng-invalid, textarea.ng-touched.ng-invalid, select.ng-touched.n
     min-width: 100px;
 }
 
-.login{
+.login {
     width:100% !important;
     height:auto !important;
+}
+
+.smart-editable-field {
+    width:100% !important;
+    height:auto !important;
+}
+
+.top-deeds {
+    padding:5px 10px;
+}
+.top-deeds input {
+    min-height:35px;
 }

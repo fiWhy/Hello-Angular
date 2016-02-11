@@ -20,14 +20,14 @@
                   }
             ],
             deeds: {
-                search: {
+                searchable: {
                     isset: true,
-                    byFields: ['id', 'title', 'content'],
                     callback: vm.search,
                 },
-                shortedit: {
+                removeable: {
                     isset: true,
-                    callback: vm.shortEdit,
+                    idIndex: 0,
+                    callback: vm.remove,
                 },
                 edit: {
                     isset: true,
@@ -52,6 +52,5 @@
       count-pages="vm.countPages"
       single-edit="vm.shortEdit"
       multiple-edit="vm.edit"
-      search="vm.search"
-      title="{{ 'NEWS_HEAD' || translate}}">
+      title="{{ 'NEWS_HEAD' | translate }}">
 </smart-table>

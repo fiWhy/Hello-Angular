@@ -6,7 +6,7 @@
     SmartTable.$inject = ['config', '$translate', '$filter'];
     function SmartTable(config, $translate, $filter) {
 
-      function prepereHead(fields) {
+      function prepareHead(fields) {
          var result = [],
              title;
          for(var item in fields) {
@@ -61,8 +61,7 @@
                 countPages: '=',
                 currentPage: '=',
                 singleEdit: '=',
-                multipleEdit: '=',
-                search: '='
+                multipleEdit: '='
             },
             templateUrl: config.documentRoot +  '/core/directives/table/templates/table.template.html',
             controller: function($scope, $element, $attrs) {
@@ -73,9 +72,16 @@
                         throw 'You must set markig and fields of it!';
 
                      var fields = $scope.marking.fields;
+                      var deeds = $scope.marking.deeds;
 
-                     $scope.head = prepereHead(fields);
+                     $scope.head = prepareHead(fields);
                      $scope.body = prepareBody(fields, newVal);
+
+                      if(deeds.searchable && deeds.searchable.isset)
+                            $scope.search = deeds.searchable.callback;
+                      if(deeds.removeable && deeds.removeable.isset){
+                          $scope.remove = deeds.removeable.callback;
+                      }
 
                      $scope.fieldEdit = function(data) {
                         $scope.singleEdit(data);

@@ -18,6 +18,7 @@
         vm.shortEdit = shortEdit;
         vm.edit = edit;
         vm.search = search;
+        vm.remove = remove;
 
         activate();
 
@@ -42,6 +43,10 @@
 
         function search(data) {
             console.log(data);
+        }
+
+        function remove(id) {
+            console.log(id);
         }
 
 

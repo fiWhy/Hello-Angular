@@ -14,10 +14,10 @@
 
 			switch(data.type){
 				case 'textarea':
-					input = '<textarea data-ng-model="fieldData.data.value"></textarea>';
+					input = '<textarea class="smart-editable-field" data-ng-model="fieldData.data.value"></textarea>';
 					break;
 				case 'input':
-					input = '<input data-ng-model="fieldData.data.value">';
+					input = '<input class="smart-editable-field" data-ng-model="fieldData.data.value">';
 					break;
 			}
 
