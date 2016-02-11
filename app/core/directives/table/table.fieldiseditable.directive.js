@@ -70,7 +70,7 @@
 				}
 
 				$scope.finishEditing = function() {
-						$scope.fieldEdit(compact($scope.fieldData.data));
+						$scope.singleEdit(compact($scope.fieldData.data));
 						blocksToggle();
 				}
 
