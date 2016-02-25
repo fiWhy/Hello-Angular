@@ -21,7 +21,10 @@
      </thead>
      <tbody>
         <tr data-ng-repeat="tr in body">
-          <td data-ng-if="!td.editable" data-ng-repeat="td in tr.rowData" data-ng-bind="td.data.value"></td>
+          <td data-ng-if="!td.editable"
+              data-ng-repeat="td in tr.rowData"
+              data-ng-bind="td.data.value">
+          </td>
 
           <td data-ng-if="td.editable"
               field-is-editable
@@ -30,8 +33,8 @@
               data-ng-repeat="td in tr.rowData">
 
             <div data-ng-dblclick="dblclick();"
-                 class="showable-field">
-                 {{ td.data.value }}
+                 class="showable-field"
+                 data-ng-bind-html="td.data.value | sanitize">
             </div>
 
           </td>
@@ -40,7 +43,10 @@
               <a href="javascript:;" class="btn btn-small btn-success">
                   <i class="btn-icon-only icon-edit"> </i>
               </a>
-              <a data-ng-if="marking.deeds.removeable" data-ng-click="remove(tr.rowData[marking.deeds.removeable.idIndex].data.value)" href="javascript:;" class="btn btn-danger btn-small">
+              <a data-ng-if="marking.deeds.removeable"
+                 data-ng-click="remove(tr.rowData[marking.deeds.removeable.idIndex].data.value)"
+                 href="javascript:;"
+                 class="btn btn-danger btn-small">
                   <i class="btn-icon-only icon-remove"> </i>
               </a>
           </td>

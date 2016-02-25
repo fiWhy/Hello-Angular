@@ -1,0 +1,35 @@
+{
+  "name": "angular-skeleon-application",
+  "version": "1.0.0",
+  "description": "Angular skeleton for fast developing",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fiWhy/Hello-Angular.git"
+  },
+  "keywords": [
+    "angular",
+    "js"
+  ],
+  "author": "fiWhy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fiWhy/Hello-Angular/issues"
+  },
+  "homepage": "https://github.com/fiWhy/Hello-Angular#readme",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.0",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-typescript": "^2.12.0",
+    "gulp-watch": "^4.3.5",
+    "jshint": "^2.9.1",
+    "merge2": "^1.0.1",
+    "tsd": "^0.6.5"
+  }
+}

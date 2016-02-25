@@ -50,7 +50,6 @@
             })
          return result;
       }
-
         return {
             restrict: 'E',
             scope: {

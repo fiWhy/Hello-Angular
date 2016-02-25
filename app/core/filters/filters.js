@@ -12,6 +12,8 @@
                   name: 'MainFilters',
                   files: [
                      config.documentRoot + '/core/filters/range/range.filter.js',
+                      config.documentRoot + '/core/filters/sanitize/sanitize.filter.js',
+
                   ]
                }
          ]

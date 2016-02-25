@@ -1,4 +1,6 @@
 /bower_components
 /markup
 /.idea
+/node_modules
+/typings
 plans.txt
